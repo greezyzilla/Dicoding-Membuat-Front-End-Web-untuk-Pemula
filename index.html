@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bookshelf</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/css/cssreset.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <header class="header">
+            <h1>Bookshelf</h1>
+        </header>
+        <div class="container">
+            <div class="bookshelf-container">
+                <form class="form-search" id="form-search">
+                    <svg
+                        class="form-search-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input
+                        class="form-search-input"
+                        placeholder="Search book name.."
+                        type="text"
+                        id="form-search-input"
+                    />
+                </form>
+                <div class="book-list-container">
+                    <div class="books-uncomplete-container">
+                        <div class="cta-container">
+                            <h2 class="books-container-label">Uncomplete Books</h2>
+                            <button class="button-cta" id="button-cta">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-plus"
+                                >
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Add Book
+                            </button>
+                        </div>
+                        <div class="books-container" id="uncompleted-list"></div>
+                    </div>
+                    <div class="books-complete-container">
+                        <h2 class="books-container-label">Completed Books</h2>
+                        <div class="books-container" id="completed-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="book" id="template-book">
+                <div class="book-information-container">
+                    <p class="book-label" id="title"></p>
+                    <p class="book-label" id="author"></p>
+                    <p class="book-label" id="year"></p>
+                </div>
+                <div class="book-action-container">
+                    <button class="book-action" id="action-completed"></button>
+                    <button class="book-action" id="action-edit"></button>
+                    <button class="book-action" id="action-delete"></button>
+                </div>
+            </div>
+            <div class="backdrop" id="backdrop"></div>
+            <div class="modal-container" id="modal-add">
+                <form class="form content" id="form-add">
+                    <h2 class="form-title">Add New Book</h2>
+                    <div class="form-input-container">
+                        <label class="form-input-label" for="title"> Title </label>
+                        <input class="form-input" type="text" name="title" id="title" required />
+                    </div>
+                    <div class="form-input-container">
+                        <label class="form-input-label" for="author"> Author </label>
+                        <input class="form-input" type="text" name="author" id="author" required />
+                    </div>
+                    <div class="form-input-container">
+                        <label class="form-input-label" for="year">Year</label>
+                        <input class="form-input" type="text" name="year" id="year" required />
+                    </div>
+                    <div class="form-checkbox-container">
+                        <input
+                            class="form-input-label"
+                            type="checkbox"
+                            name="isComplete"
+                            id="isComplete"
+                        />
+                        <label class="form-checkbox" for="isComplete">Complete</label>
+                    </div>
+                    <button class="form-add-submit" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="modal-container" id="modal-edit">
+                <form class="form content" id="form-edit">
+                    <h2 class="form-title">Edit Book</h2>
+                    <input type="hidden" class="form-edit-id" />
+                    <div class="form-input-container">
+                        <label class="form-input-label" for="title">Title</label>
+                        <input class="form-input" type="text" name="title" id="title" required />
+                    </div>
+                    <div class="form-input-container">
+                        <label class="form-input-label" for="author">Author</label>
+                        <input class="form-input" type="text" name="author" id="author" required />
+                    </div>
+                    <div class="form-input-container">
+                        <label class="form-input-label" for="year">Year</label>
+                        <input class="form-input" type="text" name="year" id="year" required />
+                    </div>
+                    <div class="form-checkbox-container">
+                        <input
+                            class="form-checkbox"
+                            type="checkbox"
+                            name="isComplete"
+                            id="isComplete"
+                        />
+                        <label class="form-input-label" for="isComplete">Complete</label>
+                    </div>
+                    <button class="form-edit-submit" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <script src="/js/script.js"></script>
+    </body>
+</html>
