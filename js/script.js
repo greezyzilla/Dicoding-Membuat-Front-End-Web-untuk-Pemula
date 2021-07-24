@@ -168,7 +168,8 @@ document.getElementById('backdrop').addEventListener('click', (event) => {
 });
 
 window.addEventListener('load', () => {
-    books = JSON.parse(localStorage.getItem('books'));
+    const localBooks = JSON.parse(localStorage.getItem('books'));
+    books = localBooks || [];
     unmountBooks(books);
     mountBooks(books);
     console.log('rendering');
